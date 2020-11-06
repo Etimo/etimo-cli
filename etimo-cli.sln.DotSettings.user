@@ -1,0 +1,15 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f5239291_002Dcfbb_002D4631_002D9f39_002De8d2a5e4174e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="HelpTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AA890999-D501-49AA-BA32-08310FAB2FED::.NETCoreApp,Version=v5.0::Etimo.Cli.Tool.Tests.LoggerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AA890999-D501-49AA-BA32-08310FAB2FED::.NETCoreApp,Version=v5.0::Etimo.Cli.Tool.Tests.ArgumentParserTests.NUGET_ShouldReturnLowerCaseCommandName&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AA890999-D501-49AA-BA32-08310FAB2FED::.NETCoreApp,Version=v5.0::Etimo.Cli.Tool.Tests.ArgumentParserTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AA890999-D501-49AA-BA32-08310FAB2FED::.NETCoreApp,Version=v5.0::Etimo.Cli.Tool.Tests.CommandFactoryTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AA890999-D501-49AA-BA32-08310FAB2FED::.NETCoreApp,Version=v5.0::Etimo.Cli.Tool.Tests.CommandTests.Description_ShouldMatchDescriptionAttribute&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AA890999-D501-49AA-BA32-08310FAB2FED::.NETCoreApp,Version=v5.0::Etimo.Cli.Tool.Tests.CommandTests.Name_ShouldMatchNameAttribute&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AA890999-D501-49AA-BA32-08310FAB2FED::.NETCoreApp,Version=v5.0::Etimo.Cli.Tool.Tests.CommandTests.Family_ShouldMatchFamilyAttribute&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AA890999-D501-49AA-BA32-08310FAB2FED::.NETCoreApp,Version=v5.0::Etimo.Cli.Tool.Tests.CommandTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AA890999-D501-49AA-BA32-08310FAB2FED::.NETCoreApp,Version=v5.0::Etimo.Cli.Tool.Tests.OptionTests.Name_ShouldMatchNameAttribute&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AA890999-D501-49AA-BA32-08310FAB2FED::.NETCoreApp,Version=v5.0::Etimo.Cli.Tool.Tests.OptionTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
