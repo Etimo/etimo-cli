@@ -5,7 +5,7 @@
 To create a nupkg with the tool, issue the following command:
 
 ```
-dotnet build
+dotnet build -c Release
 ```
 
 This will build both the `etimo.cli` nuget and the `etimo.cli.tool` tool in the `./nupkg` folder.
