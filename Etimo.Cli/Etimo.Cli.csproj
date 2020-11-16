@@ -21,8 +21,4 @@
     </AssemblyAttribute>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Commands\New\" />
-  </ItemGroup>
-
 </Project>
