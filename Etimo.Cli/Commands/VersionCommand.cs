@@ -2,9 +2,11 @@ using System.Reflection;
 
 namespace Etimo.Cli.Commands
 {
+    /// <summary>
+    /// Displays the current version of the command-line interface.
+    /// </summary>
     [CommandName("version")]
-    [CommandFamily("version")]
-    [CommandDescription("Displays the current version of etimo-cli.")]
+    [CommandDescription("Displays the current version of the command-line interface.")]
     public class VersionCommand : Command
     {
         public override void Execute()

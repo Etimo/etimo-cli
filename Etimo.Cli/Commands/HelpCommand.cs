@@ -2,9 +2,11 @@ using Etimo.Cli.Options;
 
 namespace Etimo.Cli.Commands
 {
+    /// <summary>
+    /// Prints the help screen.
+    /// </summary>
     [CommandName("help")]
-    [CommandFamily("help")]
-    [CommandDescription("Shows the help screen.")]
+    [CommandDescription("Prints the help screen.")]
     public class HelpCommand : Command
     {
         public override void Prepare()
