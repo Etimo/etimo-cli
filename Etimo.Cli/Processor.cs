@@ -34,16 +34,21 @@ namespace Etimo.Cli
             _context = Parse(args);
             if (_context.HasOption<InteractiveOption>())
             {
-                while (true)
-                {
-                    Process();
-                    Console.Write("etimo $ ");
-                    args = Console.ReadLine()?.Split(' ').ToList();
-                    _context = Parse(args);
-                }
+                InteractiveProcess();
             }
 
             Process();
+        }
+
+        private void InteractiveProcess()
+        {
+            while (true)
+            {
+                Process();
+                Console.Write("etimo $ ");
+                var args = Console.ReadLine()?.Split(' ').ToList();
+                _context = Parse(args);
+            }
         }
 
         private IExecutionContext Parse(List<string> args)
