@@ -4,16 +4,16 @@
 # Whitespace exclusions
 *.txt whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
 *.md whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
-*.js whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
-*.ts whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
+*.cs whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=4
 *.json whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
+*.yml whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
 
 # Treat these as text files with linefeed endings
 *.txt text eol=lf
 *.md text eol=lf
-*.js text eol=lf
-*.ts text eol=lf
+*.cs text eol=lf
 *.json text eol=lf
+*.yml text eol=lf
 
 # Binary files
 *.jpg binary
