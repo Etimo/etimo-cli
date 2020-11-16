@@ -9,22 +9,23 @@ namespace Etimo.Cli
 {
     public class ArgumentParser : IArgumentParser
     {
-        private readonly ICommandReflector _commandReflector;
-        private readonly IOptionReflector _optionReflector;
-
-        private ExecutionContext _executionContext;
+        private readonly ExecutionContext _executionContext;
 
         public ArgumentParser(
             ICommandReflector commandReflector = null,
             IOptionReflector optionReflector = null)
         {
-            _commandReflector = commandReflector ?? CommandReflectorFactory.Default;
-            _optionReflector = optionReflector ?? OptionReflectorFactory.Default;
+            CommandReflector = commandReflector ?? CommandReflectorFactory.Default;
+            OptionReflector = optionReflector ?? OptionReflectorFactory.Default;
+
+            _executionContext = new ExecutionContext {Reflector = CommandReflector};
         }
+
+        public ICommandReflector CommandReflector { get; }
+        public IOptionReflector OptionReflector { get; }
 
         public virtual IArgumentParser Parse(List<string> arguments)
         {
-            _executionContext = new ExecutionContext();
             arguments ??= new List<string>();
             ParseProgramArguments(arguments.ToList());
             ParseArguments(arguments.ToList());
@@ -81,7 +82,9 @@ namespace Etimo.Cli
 
         private void ParseCommand(List<string> arguments)
         {
-            _executionContext.Command = GetCommand(arguments);
+            var command = GetCommand(arguments);
+            command.Context = _executionContext;
+            _executionContext.Command = command;
         }
 
         private ICommand GetCommand(List<string> arguments)
@@ -94,7 +97,7 @@ namespace Etimo.Cli
                 return new NoCommand();
             }
 
-            var commands = _commandReflector.GetCommands().ToList();
+            var commands = CommandReflector.GetCommands().ToList();
             foreach (var command in commandVariations)
             {
                 var foundCommand = commands.FirstOrDefault(c => string.Equals(c.Name, command, StringComparison.InvariantCultureIgnoreCase));
@@ -109,7 +112,7 @@ namespace Etimo.Cli
 
         private Dictionary<string, Option> GetAvailableOptions()
         {
-            var allOptions = _optionReflector.GetOptions();
+            var allOptions = OptionReflector.GetOptions();
             var availableOptions = new Dictionary<string, Option>();
             foreach (var option in allOptions)
             {

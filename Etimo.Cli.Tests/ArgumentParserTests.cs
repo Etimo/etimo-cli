@@ -4,33 +4,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Etimo.Cli.Commands;
+using Etimo.Cli.Tests.Factories;
 
 namespace Etimo.Cli.Tests
 {
     public class ArgumentParserTests
     {
-        private CommandReflector _commandReflector;
-        private OptionReflector _optionReflector;
-
-        [SetUp]
-        public void Setup()
-        {
-            _commandReflector = CommandReflectorFactory.CreateCommandReflector("Etimo.Cli.Tool.Tests.Commands");
-            _optionReflector = OptionReflectorFactory.CreateOptionReflector("Etimo.Cli.Tool.Tests.Options");
-        }
-
-        private ArgumentParser GetArgumentParser(List<string> args)
-        {
-            return new ArgumentParser(_commandReflector, _optionReflector);
-        }
-
         [Test]
         public void Parse_Uppercase_ShouldReturnLowerCaseCommandName()
         {
             var args = new List<string> { "TEST" };
             const string expectedCommand = "test";
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
             parser.Parse(args);
             var commandName = parser.GetContext().Command.Name;
 
@@ -43,7 +29,7 @@ namespace Etimo.Cli.Tests
             var args = new List<string> { "test" };
             const string expectedCommand = "test";
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
             parser.Parse(args);
             var commandName = parser.GetContext().Command.Name;
 
@@ -55,7 +41,7 @@ namespace Etimo.Cli.Tests
         {
             var args = new List<string> { "test" };
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
             parser.Parse(args);
             var arguments = parser.GetContext().Arguments;
 
@@ -67,7 +53,7 @@ namespace Etimo.Cli.Tests
         {
             var args = new List<string> { "test" };
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
             parser.Parse(args);
             var options = parser.GetContext().Options;
 
@@ -80,7 +66,7 @@ namespace Etimo.Cli.Tests
             var args = new List<string> { "test", "new" };
             const string expectedCommand = "test new";
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
             parser.Parse(args);
             var commandName = parser.GetContext().Command.Name;
 
@@ -93,7 +79,7 @@ namespace Etimo.Cli.Tests
             var args = new List<string> { "test", "new" };
             const string expectedFamily = "test";
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
             parser.Parse(args);
             var familyName = parser.GetContext().Command.Family;
 
@@ -105,7 +91,7 @@ namespace Etimo.Cli.Tests
         {
             var args = new List<string> { "test", "new" };
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
             parser.Parse(args);
             var arguments = parser.GetContext().Arguments;
 
@@ -117,7 +103,7 @@ namespace Etimo.Cli.Tests
         {
             var args = new List<string> { "test", "new" };
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
             parser.Parse(args);
             var options = parser.GetContext().Options;
 
@@ -130,7 +116,7 @@ namespace Etimo.Cli.Tests
             var args = new List<string> { "test", "--foo", "new" };
             const string expectedCommand = "test";
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
             parser.Parse(args);
             var commandName = parser.GetContext().Command.Name;
 
@@ -143,7 +129,7 @@ namespace Etimo.Cli.Tests
             var args = new List<string> { "test", "--foo", "new" };
             const string expectedOption = "foo";
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
             parser.Parse(args);
             var optionName = parser.GetContext().Options.First().Name;
 
@@ -155,7 +141,7 @@ namespace Etimo.Cli.Tests
         {
             var args = new List<string> { "--foo" };
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
             parser.Parse(args);
             var command = parser.GetContext().Command;
 
@@ -167,7 +153,7 @@ namespace Etimo.Cli.Tests
         {
             var args = new List<string> { "--invalid" };
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
 
             Assert.Throws<ArgumentException>(() =>
             {
@@ -180,7 +166,7 @@ namespace Etimo.Cli.Tests
         {
             var args = new List<string> { "--help" };
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
             parser.Parse(args);
             var commandName = parser.GetContext().Command.Name;
 
@@ -192,7 +178,7 @@ namespace Etimo.Cli.Tests
         {
             var args = new List<string> { "--help" };
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
             parser.Parse(args);
             var options = parser.GetContext().Options;
 
@@ -204,7 +190,7 @@ namespace Etimo.Cli.Tests
         {
             var args = new List<string> { "--help" };
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
             parser.Parse(args);
             var arguments = parser.GetContext().Arguments;
 
@@ -216,7 +202,7 @@ namespace Etimo.Cli.Tests
         {
             var args = new List<string> { "--HELP" };
 
-            var parser = GetArgumentParser(args);
+            var parser = ArgumentParserFactory.CreateArgumentParser();
             parser.Parse(args);
             var option = parser.GetContext().Options.FirstOrDefault()?.GetType();
 

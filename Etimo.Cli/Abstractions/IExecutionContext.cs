@@ -12,6 +12,7 @@ namespace Etimo.Cli.Abstractions
         ILogger Logger { get; set; }
         IOutputFormatter Formatter { get; set; }
         IOutput Output { get; set; }
+        ICommandReflector Reflector { get; set; }
         IExecutionContext PrepareOptions();
         bool HasOption<T>() where T : IOption;
         T GetProperty<T>(string name) where T : class;

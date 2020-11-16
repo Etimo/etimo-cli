@@ -69,6 +69,7 @@ namespace Etimo.Cli
             _context.PrepareOptions();
             _context.Formatter = _formatter;
             _context.Output = _output;
+            _context.Reflector = _parser.CommandReflector;
             RunCommand(_context.Command);
         }
 

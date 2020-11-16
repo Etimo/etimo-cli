@@ -15,6 +15,7 @@ namespace Etimo.Cli
         public ILogger Logger { get; set; } = new InformationLogger(new ConsoleOutput());
         public IOutputFormatter Formatter { get; set; } = new OutputFormatter();
         public IOutput Output { get; set; } = new ConsoleOutput();
+        public ICommandReflector Reflector { get; set; } = CommandReflectorFactory.Default;
 
         public IExecutionContext PrepareOptions()
         {

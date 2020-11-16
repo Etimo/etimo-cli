@@ -6,5 +6,7 @@ namespace Etimo.Cli.Abstractions
     {
         IArgumentParser Parse(List<string> arguments);
         IExecutionContext GetContext();
+        ICommandReflector CommandReflector { get; }
+        IOptionReflector OptionReflector { get; }
     }
 }

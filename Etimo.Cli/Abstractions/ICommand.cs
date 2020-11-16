@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Etimo.Cli.Abstractions
 {
     public interface ICommand
@@ -27,5 +29,11 @@ namespace Etimo.Cli.Abstractions
         /// Print output for command.
         /// </summary>
         void Output();
+
+        /// <summary>
+        /// Get a list of the command's family members.
+        /// </summary>
+        /// <returns>List of ICommands</returns>
+        List<ICommand> GetFamilyMembers();
     }
 }
