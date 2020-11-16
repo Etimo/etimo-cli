@@ -34,3 +34,5 @@ yarn.lock -diff
 # Exclude these files from the git archive export (.zip)
 .gitattributes export-ignore
 .gitignore export-ignore
+.editorconfig export-ignore
+**/*.user export-ignore
