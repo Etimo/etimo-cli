@@ -1,7 +1,7 @@
-using Etimo.Cli.Tool.Tests.Commands;
+using Etimo.Cli.Tests.Commands;
 using NUnit.Framework;
 
-namespace Etimo.Cli.Tool.Tests
+namespace Etimo.Cli.Tests
 {
     public class CommandTests
     {

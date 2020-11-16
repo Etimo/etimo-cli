@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Etimo.Cli.Commands;
 
-namespace Etimo.Cli.Tool.Tests
+namespace Etimo.Cli.Tests
 {
     public class ArgumentParserTests
     {

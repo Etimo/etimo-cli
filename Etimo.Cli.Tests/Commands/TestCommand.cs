@@ -1,6 +1,6 @@
 using Etimo.Cli.Commands;
 
-namespace Etimo.Cli.Tool.Tests.Commands
+namespace Etimo.Cli.Tests.Commands
 {
     [CommandName("test")]
     [CommandFamily("test")]

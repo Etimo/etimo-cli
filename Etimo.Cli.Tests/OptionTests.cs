@@ -1,8 +1,8 @@
-using Etimo.Cli.Tool.Tests.Commands;
-using Etimo.Cli.Tool.Tests.Options;
+using Etimo.Cli.Tests.Commands;
+using Etimo.Cli.Tests.Options;
 using NUnit.Framework;
 
-namespace Etimo.Cli.Tool.Tests
+namespace Etimo.Cli.Tests
 {
     public class OptionTests
     {

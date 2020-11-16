@@ -1,7 +1,7 @@
 using Etimo.Cli.Commands;
 using Etimo.Cli.Options;
 
-namespace Etimo.Cli.Tool.Tests.Commands
+namespace Etimo.Cli.Tests.Commands
 {
     [CommandName("test new")]
     [CommandFamily("test")]

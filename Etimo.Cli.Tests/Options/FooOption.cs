@@ -1,7 +1,7 @@
 using Etimo.Cli.Options;
 using System;
 
-namespace Etimo.Cli.Tool.Tests.Options
+namespace Etimo.Cli.Tests.Options
 {
     [OptionName("foo")]
     [OptionShortName('f')]
